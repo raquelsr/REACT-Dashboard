@@ -1,7 +1,7 @@
-import { users } from "./mockData"
-import { User, UserInput } from "./types"
+import { data, users } from "./mockData"
+import { Data, User, UserInput } from "./types"
 
-
+const getData = (): Data[] => data;
 const getUser = (args: { id: number }): User | undefined =>
     users.find(u => u.id === args.id)
 
@@ -27,6 +27,7 @@ const updateUser = (args: { user: User }): User => {
 }
 
 export const root = {
+    getData,
     getUser,
     getUsers,
     createUser,

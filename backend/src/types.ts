@@ -5,3 +5,10 @@ export type User = {
 }
 
 export type UserInput = Pick<User, "email" | "name">
+
+export type Data = {
+    name: string
+    uv: number
+    pv: number
+    amt: number
+}

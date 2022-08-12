@@ -13,6 +13,13 @@ export const schema = buildSchema(`
         email: String!
     }
 
+    type Data {
+        name: String!,
+        uv: Int!,
+        pv: Int!,
+        amt: Int!
+    }
+
     type Mutation {
         createUser(input: UserInput): User
         updateUser(id: Int!, input: UserInput): User
@@ -21,5 +28,6 @@ export const schema = buildSchema(`
     type Query {
         getUser(id: String): User
         getUsers: [User]
+        getData: [Data]
     }
 `)
