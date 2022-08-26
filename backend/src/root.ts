@@ -1,35 +1,35 @@
-import { data, users } from "./mockData"
-import { Data, User, UserInput } from "./types"
+import { data, users } from './mockData';
+import { Data, User } from './types';
 
 const getData = (): Data[] => data;
-const getUser = (args: { id: number }): User | undefined =>
-    users.find(u => u.id === args.id)
+const getUserById = (args: { id: number }): User | undefined =>
+    users.find(u => u.id === args.id);
 
-const getUsers = (): User[] => users
+const getUsers = (): User[] => users;
 
-const createUser = (args: { input: UserInput }): User => {
-    const user = {
-        id: users.length + 1,
-        ...args.input,
-    }
-    users.push(user)
+// const createUser = (args: { input: UserInput }): User => {
+//     const user = {
+//         id: users.length + 1,
+//         ...args.input,
+//     };
+//     users.push(user);
 
-    return user
-}
+//     return user;
+// };
 
-const updateUser = (args: { user: User }): User => {
-    const index = users.findIndex(u => u.id === args.user.id)
-    const targetUser = users[index]
+// const updateUser = (args: { user: User }): User => {
+//     const index = users.findIndex(u => u.id === args.user.id);
+//     const targetUser = users[index];
 
-    if (targetUser) users[index] = args.user
+//     if (targetUser) users[index] = args.user;
 
-    return targetUser
-}
+//     return targetUser;
+// };
 
 export const root = {
     getData,
-    getUser,
+    getUserById,
     getUsers,
-    createUser,
-    updateUser,
-}
+    // createUser,
+    // updateUser,
+};

@@ -1,10 +1,16 @@
+
 export type User = {
-    id: number
-    name: string
-    email: string
+    country: string;
+    email: string;
+    id: number;
+    isInvited: boolean;
+    isRegistered: boolean;
+    jobPosition: string[];
+    lastName: string;
+    name: string;
 }
 
-export type UserInput = Pick<User, "email" | "name">
+// export type UserInput = Pick<User, "email" | "name">
 
 export type Data = {
     name: string

@@ -1,4 +1,4 @@
-import { buildSchema } from "graphql"
+import { buildSchema } from 'graphql';
 
 export const schema = buildSchema(`
     input UserInput {
@@ -8,9 +8,14 @@ export const schema = buildSchema(`
     }
 
     type User {
-        id: Int!
-        name: String!
+        country: String!
         email: String!
+        id: Int!
+        isInvited: Boolean!
+        isRegistered: Boolean!
+        jobPosition: [String!]!
+        lastName: String!
+        name: String!
     }
 
     type Data {
@@ -26,8 +31,8 @@ export const schema = buildSchema(`
     }
 
     type Query {
-        getUser(id: String): User
+        getUserById(id: Int): User
         getUsers: [User]
         getData: [Data]
     }
-`)
+`);

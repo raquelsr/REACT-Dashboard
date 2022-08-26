@@ -1,23 +1,23 @@
-import express from "express"
+import express from 'express';
 import cors from 'cors';
-import { graphqlHTTP } from "express-graphql"
-import { root } from "./root"
-import { schema } from "./schema"
+import { graphqlHTTP } from 'express-graphql';
+import { root } from './root';
+import { schema } from './schema';
 
-const app = express()
+const app = express();
 
 app.use(cors());
 app.use(
-    "/graphql",
+    '/graphql',
     graphqlHTTP({
-        schema: schema,
-        rootValue: root,
         graphiql: true,
+        rootValue: root,
+        schema: schema,
     })
-)
+);
 
-const PORT = 8000
+const PORT = 8000;
 
-app.listen(PORT)
+app.listen(PORT);
 
-console.log(`Running a GraphQL API server at http://localhost:${PORT}/graphql`)
+console.log(`Running a GraphQL API server at http://localhost:${PORT}/graphql`);
