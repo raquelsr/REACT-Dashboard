@@ -25,6 +25,12 @@ export const schema = buildSchema(`
         amt: Int!
     }
 
+    type getRegisteredUsersStatisticsPayload {
+        average: Float!,
+        totalInvitations: Int!,
+        totalRegisteredUsers: Int!
+    }
+
     type Mutation {
         createUser(input: UserInput): User
         updateUser(id: Int!, input: UserInput): User
@@ -34,5 +40,6 @@ export const schema = buildSchema(`
         getUserById(id: Int): User
         getUsers: [User]
         getData: [Data]
+        getRegisteredUsersStatistics: getRegisteredUsersStatisticsPayload
     }
 `);

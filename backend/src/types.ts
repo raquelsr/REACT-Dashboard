@@ -10,6 +10,12 @@ export type User = {
     name: string;
 }
 
+export type getRegisteredUsersStatisticsPayload = {
+    average: number;
+    totalInvitations: number;
+    totalRegisteredUsers: number;
+}
+
 // export type UserInput = Pick<User, "email" | "name">
 
 export type Data = {
