@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import { BarChart } from '../components/BarChart';
 import { LineChart } from '../components/LineChart';
 import { PieChart } from '../components/PieChart';
+import { Summary } from '../components/Summary';
 import { GET_DATA } from '../queries/data';
 import { GET_USERS } from '../queries/user';
 
@@ -16,10 +17,16 @@ export const Dashboard = () => {
 
   return (
     <div>
-      <LineChart data={data.getData} dataKey='uv' xAxisKeys='name'></LineChart>
-      <LineChart data={dataUsers.getUsers} dataKey='id' xAxisKeys='id'></LineChart>
-      <BarChart data={dataUsers.getUsers} xAxisKeys='id' layout='horizontal'></BarChart>
-      <BarChart data={dataUsers.getUsers} xAxisKeys='id' layout='vertical'></BarChart>
+      <Summary />
+      <div>
+        <LineChart data={data.getData} dataKey='uv' xAxisKeys='name'></LineChart>
+        <LineChart data={dataUsers.getUsers} dataKey='id' xAxisKeys='id'></LineChart>
+      </div>
+      <div>
+        <BarChart data={dataUsers.getUsers} xAxisKeys='id' layout='horizontal'></BarChart>
+        <BarChart data={dataUsers.getUsers} xAxisKeys='id' layout='vertical'></BarChart>
+      </div>
+
       <PieChart data={dataUsers.getUsers} dataKey='id' nameKey='name'></PieChart>
     </div>);
 };
