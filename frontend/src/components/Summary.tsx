@@ -6,10 +6,7 @@ export const Summary = () => {
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Upps...There is an error. :( </p>;
-    let data;
-    if (statisticsData) {
-        data = statisticsData.getRegisteredUsersStatistics;
-    }
+    const data = statisticsData?.getRegisteredUsersStatistics;
     return (
         <>
             <div className='grid grid-cols-4 gap-6 m-10 h-64'>

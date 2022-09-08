@@ -3,6 +3,7 @@ import { BarChart } from '../components/BarChart';
 import { LineChart } from '../components/LineChart';
 import { PieChart } from '../components/PieChart';
 import { Summary } from '../components/Summary';
+import { Table } from '../components/Table';
 import { GET_DATA } from '../queries/data';
 import { GET_USERS } from '../queries/user';
 
@@ -18,6 +19,7 @@ export const Dashboard = () => {
   return (
     <div>
       <Summary />
+      <Table />
       <div>
         <LineChart data={data.getData} dataKey='uv' xAxisKeys='name'></LineChart>
         <LineChart data={dataUsers.getUsers} dataKey='id' xAxisKeys='id'></LineChart>
