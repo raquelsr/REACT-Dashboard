@@ -1,7 +1,7 @@
 import { User } from './types';
 
 /* eslint-disable sort-keys */
-const countries = Object.freeze({
+export const countries = Object.freeze({
     BELGIUM: 'BE',
     NIGERIA: 'NG',
     PORTUGAL: 'PT',

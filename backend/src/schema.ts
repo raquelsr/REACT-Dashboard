@@ -31,6 +31,12 @@ export const schema = buildSchema(`
         totalRegisteredUsers: Int!
     }
 
+    type getTotalUsersByCountryPayload {
+        country: String!,
+        totalCount: Int!,
+        percentage: Float!
+    }
+
     type Mutation {
         createUser(input: UserInput): User
         updateUser(id: Int!, input: UserInput): User
@@ -41,5 +47,6 @@ export const schema = buildSchema(`
         getUsers: [User]
         getData: [Data]
         getRegisteredUsersStatistics: getRegisteredUsersStatisticsPayload
+        getTotalUsersByCountry: [getTotalUsersByCountryPayload]
     }
 `);

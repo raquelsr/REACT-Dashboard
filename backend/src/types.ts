@@ -16,6 +16,12 @@ export type getRegisteredUsersStatisticsPayload = {
     totalRegisteredUsers: number;
 }
 
+export type getTotalUsersByCountryPayload = {
+    country: string;
+    totalCount: number;
+    percentage: number;
+}
+
 // export type UserInput = Pick<User, "email" | "name">
 
 export type Data = {

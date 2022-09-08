@@ -1,5 +1,5 @@
-import { data, users } from './mockData';
-import { Data, getRegisteredUsersStatisticsPayload, User } from './types';
+import { countries, data, users } from './mockData';
+import { Data, getRegisteredUsersStatisticsPayload, getTotalUsersByCountryPayload, User } from './types';
 
 const getData = (): Data[] => data;
 const getUserById = (args: { id: number }): User | undefined =>
@@ -16,6 +16,22 @@ const getRegisteredUsersStatistics = (): getRegisteredUsersStatisticsPayload => 
         totalRegisteredUsers
     };
 };
+
+const getTotalUsersByCountry = (): getTotalUsersByCountryPayload[] => {
+    const result: getTotalUsersByCountryPayload[] = [];
+    Object.values(countries).map(country => {
+        const totalCount = users.filter(user => user.country === country).length;
+        const percentage = parseFloat((totalCount * 100 / users.length).toFixed(2));
+        result.push({
+            country,
+            percentage,
+            totalCount,
+        });
+    });
+    return result;
+};
+
+
 // const createUser = (args: { input: UserInput }): User => {
 //     const user = {
 //         id: users.length + 1,
@@ -38,6 +54,7 @@ const getRegisteredUsersStatistics = (): getRegisteredUsersStatisticsPayload => 
 export const root = {
     getData,
     getRegisteredUsersStatistics,
+    getTotalUsersByCountry,
     getUserById,
     getUsers,
     // createUser,
