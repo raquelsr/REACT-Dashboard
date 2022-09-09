@@ -34,3 +34,14 @@ export const GET_TOTAL_USERS_BY_COUNTRY = gql`
     }
   }
 `;
+
+
+export const GET_TOTAL_USERS_BY_JOB_POSITION = gql`
+  query GetTotalUsersByJobPosition {
+    getTotalUsersByJobPosition {
+      jobPosition
+      totalCount
+      percentage
+    }
+  }
+`;

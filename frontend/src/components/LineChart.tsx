@@ -11,7 +11,7 @@ export const LineChart: React.FC<LineChartProps> = (
   { data, dataKey, xAxisKeys }
 ) => {
   return (
-    <LineChartRechart width={600} height={300} data={data}>
+    <LineChartRechart width={1000} height={300} data={data}>
       <Line type="monotone" dataKey={dataKey} stroke="#8884d8" />
       <CartesianGrid stroke="#ccc" />
       <XAxis dataKey={xAxisKeys} />

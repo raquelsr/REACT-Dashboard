@@ -4,20 +4,23 @@ import { LineChart } from '../components/LineChart';
 import { PieChart } from '../components/PieChart';
 import { Summary } from '../components/Summary';
 import { Table } from '../components/Table';
-import { GET_DATA } from '../queries/data';
-import { GET_TOTAL_USERS_BY_COUNTRY, GET_USERS } from '../queries/user';
+// import { GET_DATA } from '../queries/data';
+import { GET_TOTAL_USERS_BY_COUNTRY, GET_TOTAL_USERS_BY_JOB_POSITION, GET_USERS } from '../queries/user';
 
 export const Dashboard = () => {
-  const { loading, error, data } = useQuery(GET_DATA);
+  // const { loading, error, data } = useQuery(GET_DATA);
   const { loading: loadingUsers, error: errorUsers, data: dataUsers } = useQuery(GET_USERS);
   const { loading: loadingUsers2, error: errorUsers2, data: totalUsers } = useQuery(GET_TOTAL_USERS_BY_COUNTRY);
+  const { loading: loadingUsers3, error: errorUsers3, data: totalUsers3 } = useQuery(GET_TOTAL_USERS_BY_JOB_POSITION);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Upps...There is an error. :( </p>;
+  // if (loading) return <p>Loading...</p>;
+  // if (error) return <p>Upps...There is an error. :( </p>;
   if (loadingUsers) return <p>Loading...</p>;
   if (errorUsers) return <p>Upps...There is an error. :( </p>;
   if (loadingUsers2) return <p>Loading...</p>;
   if (errorUsers2) return <p>Upps...There is an error. :( </p>;
+  if (loadingUsers3) return <p>Loading...</p>;
+  if (errorUsers3) return <p>Upps...There is an error. :( </p>;
 
 
 
@@ -30,7 +33,7 @@ export const Dashboard = () => {
         <PieChart data={totalUsers.getTotalUsersByCountry} dataKey='percentage' nameKey='name'></PieChart>
       </div>
       <div>
-        <LineChart data={data.getData} dataKey='uv' xAxisKeys='name'></LineChart>
+        <LineChart data={totalUsers3.getTotalUsersByJobPosition} dataKey='totalCount' xAxisKeys='jobPosition'></LineChart>
         <LineChart data={dataUsers.getUsers} dataKey='id' xAxisKeys='id'></LineChart>
       </div>
 
