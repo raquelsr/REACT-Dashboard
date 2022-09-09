@@ -37,8 +37,8 @@ export const users: User[] = [
         isInvited: true,
         isRegistered: true,
         jobPosition: [JobPosition.PRODUCT_OWNER],
-        lastName: 'Kristof',
-        name: 'Verheecke',
+        lastName: 'Verheecke',
+        name: 'Kristof',
     },
     {
         country: Countries.PORTUGAL,
