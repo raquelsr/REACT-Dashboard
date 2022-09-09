@@ -43,6 +43,8 @@ export const Table = () => {
                                 <th className='border border-slate-300'>Email</th>
                                 <th className='border border-slate-300'>Job position</th>
                                 <th className='border border-slate-300'>Country</th>
+                                <th className='border border-slate-300'>Invited</th>
+                                <th className='border border-slate-300'>Registered</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,8 +54,10 @@ export const Table = () => {
                                         <td className='border border-slate-300'>{user.name}</td>
                                         <td className='border border-slate-300'>{user.lastName}</td>
                                         <td className='border border-slate-300'>{user.email}</td>
-                                        <td className='border border-slate-300'>{user.jobPosition}</td>
+                                        <td className='border border-slate-300'>{user.jobPosition.toString()}</td>
                                         <td className='border border-slate-300'>{user.country}</td>
+                                        <td className='border border-slate-300'>{user.isInvited.toString()}</td>
+                                        <td className='border border-slate-300'>{user.isRegistered.toString()}</td>
                                     </tr>
                                 );
                             })}

@@ -14,13 +14,13 @@ export const BarChart: React.FC<BarChartProps> = (
     { data, dataKey, xAxisKeys, yAxisKeys, layout }
 ) => {
     return (
-        <BarChartRechart width={730} height={250} data={data} layout={layout}>
+        <BarChartRechart width={550} height={250} data={data} layout={layout}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey={xAxisKeys} />
             <YAxis dataKey={yAxisKeys} />
             <Tooltip />
-            <Legend />
-            <Bar dataKey={dataKey} fill="#82ca9d" />
+            <Legend verticalAlign="top" height={36} />
+            <Bar name="Number of people in each country" dataKey={dataKey} fill="#6ee7b7" />
         </BarChartRechart>
     );
 };

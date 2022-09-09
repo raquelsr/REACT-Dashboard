@@ -11,6 +11,8 @@ export const GET_USERS = gql`
         jobPosition
         lastName
         name
+        isInvited
+        isRegistered
     }
   }
 `;
