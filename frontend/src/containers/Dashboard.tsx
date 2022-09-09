@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import { BarChart } from '../components/BarChart';
 import { LineChart } from '../components/LineChart';
 import { PieChart } from '../components/PieChart';
+import { SectionTitle } from '../components/SectionTitle';
 import { Summary } from '../components/Summary';
 import { Table } from '../components/Table';
 // import { GET_DATA } from '../queries/data';
@@ -26,8 +27,10 @@ export const Dashboard = () => {
 
   return (
     <div>
+      <SectionTitle title='Summary'></SectionTitle>
       <Summary />
       <Table />
+      <SectionTitle title='Charts'></SectionTitle>
       <div>
         <BarChart data={totalUsers.getTotalUsersByCountry} dataKey='totalCount' xAxisKeys='country' layout='horizontal'></BarChart>
         <PieChart data={totalUsers.getTotalUsersByCountry} dataKey='percentage' nameKey='name'></PieChart>

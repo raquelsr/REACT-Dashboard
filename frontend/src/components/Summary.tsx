@@ -29,7 +29,7 @@ export const Summary = () => {
         <>
             <div className='grid h-64 grid-cols-4 gap-6 m-10'>
                 <SummaryItem numberText={data.totalInvitations} text='Invited users' style='border-8 border-mt-orange'></SummaryItem>
-                <SummaryItem numberText={`${data.average} %`} text='Registered out of invited ' style='row-span-2 bg-lime-400'></SummaryItem>
+                <SummaryItem numberText={`${data.average} %`} text='Registered out of invited ' style='row-span-2 bg-emerald-300'></SummaryItem>
                 <SummaryItem numberText={data.totalRegisteredUsers} text='Active users' style='col-span-2 row-span-2 border-8 border-mt-orange'></SummaryItem>
                 <SummaryItem numberText={data.totalRegisteredUsers} text='Registered users' style='"text-white bg-mt-orange'></SummaryItem>
             </div>
