@@ -1,5 +1,5 @@
-import { countries, data, users } from './mockData';
-import { Data, getRegisteredUsersStatisticsPayload, getTotalUsersByCountryPayload, User } from './types';
+import { Countries, data, JobPosition, users } from './mockData';
+import { Data, getRegisteredUsersStatisticsPayload, getTotalUsersByCountryPayload, getTotalUsersByJobPositionPayload, User } from './types';
 
 const getData = (): Data[] => data;
 const getUserById = (args: { id: number }): User | undefined =>
@@ -19,11 +19,25 @@ const getRegisteredUsersStatistics = (): getRegisteredUsersStatisticsPayload => 
 
 const getTotalUsersByCountry = (): getTotalUsersByCountryPayload[] => {
     const result: getTotalUsersByCountryPayload[] = [];
-    Object.values(countries).map(country => {
+    Object.values(Countries).map(country => {
         const totalCount = users.filter(user => user.country === country).length;
         const percentage = parseFloat((totalCount * 100 / users.length).toFixed(2));
         result.push({
             country,
+            percentage,
+            totalCount,
+        });
+    });
+    return result;
+};
+
+const getTotalUsersByJobPosition = (): getTotalUsersByJobPositionPayload[] => {
+    const result: getTotalUsersByJobPositionPayload[] = [];
+    Object.values(JobPosition).map(jobPosition => {
+        const totalCount = users.filter(user => user.jobPosition.includes(jobPosition)).length;
+        const percentage = parseFloat((totalCount * 100 / users.length).toFixed(2));
+        result.push({
+            jobPosition,
             percentage,
             totalCount,
         });
@@ -55,6 +69,7 @@ export const root = {
     getData,
     getRegisteredUsersStatistics,
     getTotalUsersByCountry,
+    getTotalUsersByJobPosition,
     getUserById,
     getUsers,
     // createUser,

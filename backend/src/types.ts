@@ -22,6 +22,12 @@ export type getTotalUsersByCountryPayload = {
     percentage: number;
 }
 
+export type getTotalUsersByJobPositionPayload = {
+    jobPosition: string;
+    totalCount: number;
+    percentage: number;
+}
+
 // export type UserInput = Pick<User, "email" | "name">
 
 export type Data = {
