@@ -1,10 +1,10 @@
-import header from '../assets/mt-orange.png';
+import logo from '../assets/mt-logo.png';
 
 export const Header = () => {
     return (
         <div>
-            <img src={header} className='w-full h-10'></img>
-            <h1 className='text-orange-400 text-4xl text-center font-bold m-4'>
+            <img src={logo} className='absolute left-0 -top-4 h-28 w-28'></img>
+            <h1 className='m-4 text-4xl font-black text-center underline text-mt-orange decoration-wavy'>
                 MT Dashboard
             </h1>
         </div>
