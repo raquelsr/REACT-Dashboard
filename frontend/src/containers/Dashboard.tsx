@@ -32,11 +32,11 @@ export const Dashboard = () => {
       <Summary />
       <Table />
       <SectionTitle title='Charts'></SectionTitle>
-      <div className='flex mb-24 w-fit'>
+      <div className='flex justify-center mb-24'>
         <BarChart data={totalUsers.getTotalUsersByCountry} dataKey='totalCount' xAxisKeys='country' layout='horizontal'></BarChart>
         <PieChart data={totalUsers.getTotalUsersByCountry} dataKey='percentage' nameKey='country'></PieChart>
       </div>
-      <div>
+      <div className='flex justify-center'>
         <LineChart data={totalUsers3.getTotalUsersByJobPosition} dataKey='totalCount' xAxisKeys='jobPosition'></LineChart>
       </div>
       <div className='flex justify-center mt-12'>
