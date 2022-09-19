@@ -1,11 +1,11 @@
-import { Countries, data, JobPosition, users } from './mockData';
-import { Data, getRegisteredUsersStatisticsPayload, getTotalUsersByCountryPayload, getTotalUsersByJobPositionPayload, User } from './types';
+import { Countries, JobPosition, users } from './mockData';
+import { getRegisteredUsersStatisticsPayload, getTotalUsersByCountryPayload, getTotalUsersByJobPositionPayload, User } from './types';
 
-const getData = (): Data[] => data;
 const getUserById = (args: { id: number }): User | undefined =>
     users.find(u => u.id === args.id);
 
 const getUsers = (): User[] => users;
+
 const getRegisteredUsersStatistics = (): getRegisteredUsersStatisticsPayload => {
     const totalInvitations = users.filter(user => user.isInvited).length;
     const totalRegisteredUsers = users.filter(user => user.isRegistered).length;
@@ -66,7 +66,6 @@ const getTotalUsersByJobPosition = (): getTotalUsersByJobPositionPayload[] => {
 // };
 
 export const root = {
-    getData,
     getRegisteredUsersStatistics,
     getTotalUsersByCountry,
     getTotalUsersByJobPosition,

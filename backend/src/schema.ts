@@ -18,13 +18,6 @@ export const schema = buildSchema(`
         name: String!
     }
 
-    type Data {
-        name: String!,
-        uv: Int!,
-        pv: Int!,
-        amt: Int!
-    }
-
     type getRegisteredUsersStatisticsPayload {
         average: Float!,
         totalInvitations: Int!,
@@ -51,7 +44,6 @@ export const schema = buildSchema(`
     type Query {
         getUserById(id: Int): User
         getUsers: [User]
-        getData: [Data]
         getRegisteredUsersStatistics: getRegisteredUsersStatisticsPayload
         getTotalUsersByCountry: [getTotalUsersByCountryPayload]
         getTotalUsersByJobPosition: [getTotalUsersByJobPositionPayload]
